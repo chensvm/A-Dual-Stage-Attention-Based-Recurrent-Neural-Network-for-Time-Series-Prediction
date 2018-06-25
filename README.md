@@ -6,4 +6,5 @@ for Time Series Prediction`<br>
 This part includes writing own layers.<br>
 ## dual_attention<br>
 This part includes data's preprocessing, model's building and model's training.<br>
-
+## data
+Downloaded from (https://cseweb.ucsd.edu/~yaq007/NASDAQ100_stock_data.html)

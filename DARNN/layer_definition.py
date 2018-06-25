@@ -31,22 +31,5 @@ class My_Transpose(Layer):  #参数为(inputs,axis)  改变维度
     def compute_output_shape(self, input_shape):
         return (input_shape[self.axis[0]],input_shape[self.axis[1]],input_shape[self.axis[2]])
 
-class My_LSTM(Layer):
-    def __init__(self,output_dim,**kwargs):
-        self.output_dim = output_dim
-        super(My_LSTM, self).__init__(**kwargs)
-    def build(self, input_shape):
-        super(My_LSTM, self).build(input_shape)
-    def call(self, inputs,**kwargs):
-        output_sequence = LSTM(self.output_dim,return_sequences=True)(inputs)
-        #output = K.sum(output_sequence,axis=1)
-        return output_sequence
-    def compute_output_shape(self, input_shape):
-        return (input_shape[0],self.output_dim)
 
-a = Input(shape=(10,50))
-print(a)
-b = My_LSTM(output_dim=5)(a)
-model = Model(inputs=a,outputs=b)
-print(b)
 
